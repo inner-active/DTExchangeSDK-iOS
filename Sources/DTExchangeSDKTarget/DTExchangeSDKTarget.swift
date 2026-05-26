@@ -7,3 +7,16 @@
 //  
 //  Dependency file for SPM wrapper target
 //
+
+import Foundation
+
+@objc(DTExchangeSDKIntegrationHelper)
+public class DTExchangeSDKIntegrationHelper: NSObject {
+    @objc public static func isIntegratedViaSPM() -> Bool {
+        #if SWIFT_PACKAGE
+        return true
+        #else
+        return false
+        #endif
+    }
+}
